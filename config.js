@@ -28,7 +28,7 @@ class config {
 	static ownername = "a"
 	static self = true
 	static packInfo = { packname: "Selfbot • Armand", author: "instagram: @armnd.at" }
-	static namebot = "Selfbot • Armand"
+	static namebot = "AXT"
 	static limit = 50
 	static owner = ["6287823406145@s.whatsapp.net"];	
 }
