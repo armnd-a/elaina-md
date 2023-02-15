@@ -7,7 +7,7 @@ module.exports = {
 	cmd: ["menu", "m", "cmd"],
 	ignored: true,
 	async handler(m, { conn, prefix}) {
-	 conn.sendReact(m.from, '✅', m.key)
+	 conn.sendReact(m.from, '⏱️', m.key)
 	 try {
 		const cmd = [];
 		Object.values(attr.commands)
@@ -84,10 +84,8 @@ module.exports = {
 			numtag++
 		}				
 		var fotxt = `Special Credits\n`
-        fotxt += `• Rzkyfdlh\n• Zynfinity\n• AmirulDev\n• SkylarKaf\n• AhmadLui\n• Alya-Tok`        
+        fotxt += `https://instagram.com/armnd.at`        
 		const buttonsTemp = [
-			{index: 1, urlButton: {displayText: 'Instagram', url: 'https://instagram.com/skylarkaf_'}},
-            {index: 2, urlButton: {displayText: 'Whatsapp Group', url: 'https://chat.whatsapp.com/InsJNQYzm0W66YQmNa5jX9'}},
             {index: 3, quickReplyButton: {displayText: 'Owner', id: `.owner`}},
             {index: 4, quickReplyButton: {displayText: 'Dashboard', id: `.db`}},
         ]
