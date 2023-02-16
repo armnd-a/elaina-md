@@ -68,7 +68,7 @@ module.exports = {
 		menu += `*${shp} Prefix:* [ ${prefix} ]\n`;
 		menu += `*${shp} Date:* ${date}\n`;
 		menu += `*${shp} Runtime:* ${m.user.jadibot ? await prettyms(Date.now() - conn.user.uptime, {verbose: true}) : await tool.toTimer(process.uptime())}\n\n`;
-		menu += `Hallo ${await conn.getName(m.sender)} Here my command list\n\n`;`
+		menu += `Hallo ${await conn.getName(m.sender)} Here my command list\n\n`;
 		let numtag = 1
 		for (let tag of tags) {
 			menu += `\n*${tag.toUpperCase()}*\n`;
