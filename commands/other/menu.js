@@ -83,7 +83,7 @@ module.exports = {
 			}
 			numtag++
 		}				
-		var fotxt = `Special Credits\n`
+		var fotxt = `Follow My Account\n`
         fotxt += `https://instagram.com/armnd.at`        
 		const buttons= [
   {buttonId: '#db', buttonText: {displayText: 'Dashboard🖥'}, type: 1}
