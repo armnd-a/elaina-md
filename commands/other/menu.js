@@ -7,7 +7,7 @@ module.exports = {
 	cmd: ["menu", "m", "cmd"],
 	ignored: true,
 	async handler(m, { conn, prefix}) {
-	 conn.sendReact(m.from, '⏱️', m.key)
+	 conn.sendReact(m.from, '✅', m.key)
 	 try {
 		const cmd = [];
 		Object.values(attr.commands)
@@ -68,8 +68,7 @@ module.exports = {
 		menu += `*${shp} Prefix:* [ ${prefix} ]\n`;
 		menu += `*${shp} Date:* ${date}\n`;
 		menu += `*${shp} Runtime:* ${m.user.jadibot ? await prettyms(Date.now() - conn.user.uptime, {verbose: true}) : await tool.toTimer(process.uptime())}\n\n`;
-		menu += `Hallo ${await conn.getName(m.sender)} Here my command list\n\n`;
-		menu += `${readmore}`
+		menu += `Hallo ${await conn.getName(m.sender)} Here my command list\n\n`;`
 		let numtag = 1
 		for (let tag of tags) {
 			menu += `\n*${tag.toUpperCase()}*\n`;
@@ -84,15 +83,17 @@ module.exports = {
 			numtag++
 		}				
 		var fotxt = `Follow My Account\n`
-        fotxt += `https://instagram.com/armnd.at`        
-		const buttons= [
-  {buttonId: '#db', buttonText: {displayText: 'Dashboard🖥'}, type: 1}
-  {buttonId: '#owner', buttonText: {displayText: 'Owner📞'}, type: 1}]
+        fotxt += ` _•https://instagram.com/armnd.at_•`        
+		const buttonsTemp = [
+            {index: 1, urlButton: {displayText: 'Whatsapp Group', url: 'https://chat.whatsapp.com/CmJkktfVp0H2Gl4v11VOLW'}},
+            {index: 2, quickReplyButton: {displayText: 'Owner', id: `.owner`}},
+            {index: 3, quickReplyButton: {displayText: 'Dashboard', id: `.db`}},
+        ]
 		let menunya = { 
 			caption: menu,
 			footer: fotxt,
 			location: { jpegThumbnail: await tool.resize(imgmenu, 220, 200)},
-			Buttons: buttons,			    
+			templateButtons: buttonsTemp,			    
 			headerType: 1
 			}                  
 	 conn.sendMessage(m.from, menunya, { quoted: m })
