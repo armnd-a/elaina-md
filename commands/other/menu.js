@@ -85,15 +85,14 @@ module.exports = {
 		}				
 		var fotxt = `Special Credits\n`
         fotxt += `https://instagram.com/armnd.at`        
-		const buttonsTemp = [
-            {index: 3, quickReplyButton: {displayText: 'Owner', id: `.owner`}},
-            {index: 4, quickReplyButton: {displayText: 'Dashboard', id: `.db`}},
-        ]
+		const buttons= [
+  {buttonId: '#db', buttonText: {displayText: 'Dashboard🖥'}, type: 1}
+  {buttonId: '#owner', buttonText: {displayText: 'Owner📞'}, type: 1}]
 		let menunya = { 
 			caption: menu,
 			footer: fotxt,
 			location: { jpegThumbnail: await tool.resize(imgmenu, 220, 200)},
-			templateButtons: buttonsTemp,			    
+			Buttons: buttons,			    
 			headerType: 1
 			}                  
 	 conn.sendMessage(m.from, menunya, { quoted: m })
